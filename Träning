@@ -1,0 +1,328 @@
+# pengar = int(input("Hur mycket pengar har du?"))
+# if pengar >= 800:
+#    print("Du har råd med ett Guldsmycke!")
+# elif pengar >= 300:
+#  print("Du har råd med ett Järnsmycke!")
+# elif pengar >=100:
+#    print("Du har inte råd med något smycke :(")
+# else: 
+#    print("Fattiglapp")
+
+# a = True
+# b = True
+# c = False
+# print (a and b) and c
+# print (a and b and c)
+# print (a and c) and b
+# print (a and b or c)
+
+# basen = int(input("Hur lång är basen?"))
+# höjden = int(input("Hur hög är höjden"))
+# hypotenusa = int(input("Hur lång är hypotenusa"))
+# if hypotenusa**2 == basen**2 + höjden**2:
+#     print("triangeln är rätvinklig")
+# else:
+#     print("triangeln är inte rätvinklig")
+
+# sida_1 = int(input("Hur lång är första sidan?"))
+# sida_2 = int(input("Hur lång är andra sidan?"))
+# sida_3 = int(input("hur lång är tredje sidan?"))
+# if (sida_1**2 == sida_2**2 + sida_3**2) or (sida_2**2 == sida_1**2 + sida_3**2) or (sida_3**2 == sida_1**2 + sida_2**2):
+#     print("trekant")
+# else:
+#     print("Inte trekant")
+
+# ålder = int(input("Hur gammal är du?"))
+# månadsinkomst = int(input("Vad är din månadsinkomst?"))
+# if ålder >=18 and månadsinkomst >=18000:
+#     print("Du får ett lån!!!")
+# else:
+#     print("Du får inte ett lån!!!")
+
+# tal = int(input("Säg ett tal mellan 0 och 10!!"))
+# if 0 <= tal <= 10:
+#     print(f"Ditt tal är: {tal}")
+# elif tal < 0 or tal > 10:
+#     print("Ditt tal är fel")
+
+# i = 1
+# summa = 0
+# while i <= 100000000:
+#     summa = summa + i
+#     i=i+1
+# print(summa)
+
+# i = 1
+# while i <= 12:
+#     print(f"{i} * 12 = {i*12}")
+#     i+=1
+
+# i = 1
+# while i <= 10:
+#     print(i)
+#     i+=1
+
+# import random
+# slumptal = random.randint(1,10) 
+# gissning = 0
+# antal_gissningar = 0
+# max_gissningar = 3
+# while antal_gissningar < max_gissningar: 
+#     gissning = int(input("Ge mig ett tal mellan 1-10 "))
+#     if slumptal == gissning:
+#         print("Du har rätt")
+#         break
+#     else:
+#         print("Fel, välj ett nytt nummer")
+#     antal_gissningar += 1
+
+# if antal_gissningar == max_gissningar:
+#     print ("Slut på gissningar, du suger!")
+#     print (f"Talet var {slumptal} ")
+
+# for i in range (101):
+#     print(i)
+
+# for i in range (-10, 0):
+#     print(i)
+
+# division = 0
+# for i in range(1, 10001):
+#     if i % 3 == 0:
+#         division += i
+# print(division)
+
+# for i in range(1,101):
+#     if i % 3 == 0 or i % 5 == 0:
+#         print(i)
+
+# import random
+# for row in range(10):
+#     for col in range(10):
+#         print(random.choice(['*', '-']), end="")
+#     print()
+
+# def hypotenusa(sida_1, sida_2):
+#     sida_3 = (sida_1**2 + sida_2**2)**(1/2)
+#     print(sida_3)
+# hypotenusa(3, 4)
+
+# def beräkna_hyp(a, b):
+#     hypotenusa = (a**2 + b**2)**(1/2)
+#     return hypotenusa
+# a = 3
+# b = 4
+# hypotenusa = beräkna_hyp(a, b)
+# print(hypotenusa)
+
+# import turtle as w
+# turtle = w.Turtle()
+# antal_gånger = int(w.numinput("Fråga: ", "Hur många hörn ska hörningen ha?"))
+# snabbhet = int(w.numinput("Fråga: ", "Hur snabb sköldpadda?"))
+# steg_fram = int(w.numinput("Fråga: ", "Hur många framåt?"))
+# turtle.shape("turtle")
+# turtle.color("green")
+# turtle.speed(5)
+# colors = ("green","orange","blue","red","yellow","purple")
+# bakgrund = ("green","orange","blue","red","yellow","purple")
+# padda = ("green","orange","blue","red","yellow","purple")
+# for i in range(antal_gånger):
+#     turtle.color(padda[i % len(padda)])
+#     w.bgcolor(bakgrund[i % len(bakgrund)])
+#     turtle.pencolor(colors[i % len(colors)])
+#     turtle.forward(i)
+#     turtle.right(59)
+# w.exitonclick()
+
+# j = 0
+# mening = "He was going to live forever, or die in the attempt"
+# for i in mening:
+#     if i == "e":
+#         j+=1
+# print(j)
+
+# mening = "He was going to live forever, or die in the attempt"
+# Eee= mening.count("e")
+# print(Eee)
+
+# blanksteg = input("Skriv din mening här tack")
+# blanksteg.replace(" ","")
+# print(blanksteg)
+
+# vokaler = "aeiouyåäö"
+# namn = input("Vad heter du???")
+# for i in namn:
+#     for j in vokaler:
+#         if i == j:
+#             namn = namn.replace(i,"")
+# print(namn)
+
+# namn = "wilmer"
+# print(namn[::-1])
+
+# vokaler = "aeiouyåäö"
+# mening = input("skriv mening här").lower()
+# menin = ""
+# for i in range(len(mening)):
+#     if mening[i] in vokaler:
+#         menin += mening[i]
+#     else:
+#         menin += mening[i] + "o" + mening[i]
+# print(menin)
+
+# import random 
+# val = ["sten", "sax", "påse"]
+# hand = random.choice(val)
+# per1 = input("sten, sax eller påse?: ").lower()
+# if hand == per1:
+#     print(f"Ai valde {hand}.")
+#     print("Lika.")
+# elif hand == "sten" and per1 == "påse":
+#     print(f"Ai valde {hand}.")
+#     print("Person 1 vann.")
+# elif per1 == "sten" and hand == "påse":
+#     print(f"Ai valde {hand}.")
+#     print("Ai vann.")
+# elif hand == "påse" and per1 == "sax":
+#     print(f"Ai valde {hand}.")
+#     print("Person 1 vann.")
+# elif per1 == "påse" and hand == "sax":
+#     print(f"Ai valde {hand}.")
+#     print("Ai vann.")
+# elif hand == "sax" and per1 == "sten":
+#     print(f"Ai valde {hand}.")
+#     print("Person 1 vann.")
+# elif per1 == "sax" and hand == "sten":
+#     print(f"Ai valde {hand}.")
+#     print("Ai vann.")
+# else:
+#     print("Kör om")
+
+# lista = [2, 42, 42, 42, 42, 3, 3]
+# def count_42(numbers):
+#     count = 0
+#     for tal in numbers:
+#         if tal == 42:
+#             count += 1
+#     return count
+# resultat = count_42(lista)
+# print(resultat)
+
+# def test_number(number):
+#     if number > 256 and number % 34 == 4:
+#         return True
+#     else:
+#         return False
+# resultat = test_number(12)
+# print(resultat)
+
+# import math
+# def euler_approx(n):
+#     e = 0
+#     for i in range(n+1):
+#         e += 1/math.factorial(i)
+#     return e
+# print(euler_approx(1000))
+
+# import random
+
+# felgissningar = 0
+
+
+# antal_gissningar = 0
+
+# lista_ord = ["hej", "hejsan"]
+# ord_val = random.choice(lista_ord)
+# ord1 = len(lista_ord[0])
+# ord2 = len(lista_ord[1])
+
+# while antal_gissningar < ord1 or antal_gissningar < ord2:
+#     antal_gissningar = 0
+#     if ord_val == lista_ord[0]:
+#         ordlängd = ord1
+#         print("Du ska gissa ett ord på 3 bokstäver, ordet är:")
+#         asteriskering  = "*" * len(ord_val)
+#         print(asteriskering)
+#         gissning = input("Ge mig en bokstav")
+#         print(f"Du gissar på {gissning}.")
+#         antal_gissningar += 1
+#     elif ord_val == lista_ord[1]:
+#         ordlängd = ord2
+#         print("Du ska gissa ett ord på 4 bokstäver, ordet är:")
+#         asteriskering  = "*" * len(ord_val)
+#         print(asteriskering)
+#         gissning = input("Ge mig en bokstav")
+#         print(f"Du gissar på {gissning}.")
+#         antal_gissningar += 1
+#     if gissning in ord_val:
+#         plats = ord_val.index(gissning)
+#         print(f"bokstaven {gissning} finns som bokstav {plats}")
+#         ord_igen = ""
+#         for i in range(len(ord_val)):
+#             if ord_val[i] == gissning:
+#                 ord_igen += gissning
+#             else:
+#                 ord_igen += asteriskering[i]
+#         print(ord_igen)
+#     else:
+#         print("bokstaven finns inte")
+        
+# import random
+# # Lista med möjliga ord
+# ord_lista = ["äpple", "banan", "melon", "kiwi", "jordgubbe", "päron"]
+# # Slumpa fram ett ord
+# ordet = random.choice(ord_lista)
+# # Skapa en lista med asterisker (dolt ord)
+# maskerat = ["*"] * len(ordet)
+# # Lista för felgissningar
+# felgissningar = []
+# max_fel = 10  # max antal felgissningar
+# print("Välkommen till ordgissningsspelet!")
+# print("Ordet du ska gissa:", "".join(maskerat))
+# # Loop tills användaren gissat hela ordet eller gjort för många fel
+# while "*" in maskerat and len(felgissningar) < max_fel:
+#     gissning = input("Gissa en bokstav: ").lower()
+#     # Kolla att det är en bokstav
+#     if len(gissning) != 1 or not gissning.isalpha():
+#         print("Skriv bara EN bokstav.")
+#         continue
+#     # Om bokstaven redan gissats
+#     if gissning in felgissningar or gissning in maskerat:
+#         print("Den bokstaven har du redan gissat.")
+#         continue
+#     # Om bokstaven finns i ordet
+#     if gissning in ordet:
+#         for i in range(len(ordet)):
+#             if ordet[i] == gissning:
+#                 maskerat[i] = gissning
+#         print("Rätt gissat!")
+#     else:
+#         felgissningar.append(gissning)
+#         print("Fel gissat!")
+#     print("Ordet:", "".join(maskerat))
+#     print(f"Felgissningar ({len(felgissningar)}/{max_fel}):", ", ".join(felgissningar))
+# # Kolla slutresultat
+# if "*" not in maskerat:
+#     print("\nGrattis! Du gissade ordet:", ordet)
+# else:
+#     print("\nTyvärr, du nådde max antal fel. Ordet var:", ordet)
+
+# lista = [42,42,42,42,42,1,1]
+# def count_42(numbers):
+#     antal = 0
+#     for tal in lista:
+#         if tal == 42:
+#             antal += 1
+#     return antal
+# antal = count_42(lista)
+# print(antal)
+
+def test_number(number):
+    tal = int(input("Ge mig ett tal"))
+    if tal > 256 and tal % 34 == 4:
+        return True
+    else:
+        return False
+
+resultat = test_number(3)
+print(resultat)
