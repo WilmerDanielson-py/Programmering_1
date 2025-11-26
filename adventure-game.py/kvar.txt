@@ -1,0 +1,27 @@
+implementera guld
+implementera en shop, (halft klar)
+implementera buffs för levelar
+boss-kod
+miniboss-kod
+använda/ slänga item iaf fullt inv
+dodge chans (20%)
+weakness för entitys
+
+
+
+debuffs/buffs/conditions
+down syndrome 1%(sell extra cromosones for gold)
+Normal 43%(Nothing speciall)
+cronic pain 1%(takes 15%  more damage)
+congenital insensitivity to pain 1%(cant see health bar)
+asthma (10%)(Inhaler in shop)
+cancer 5(chemo-therapy in shop)
+osteopetrosis 1%(Bone density)(More HP, less atkspeed)
+Bindness 28%(Buy glasses in shop)(makes everything in brail)
+brittle hairline10%(Took damage, hair gone)
+
+
+
+Kanske:
+durability
+bullets

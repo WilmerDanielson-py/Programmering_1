@@ -1,0 +1,166 @@
+# Här importeras random för att kunna använda slumpgeneratorer
+import random as r
+
+
+# Här skapas en klass för vapen
+class weapon():
+    def __init__(self, Rarity_W, Name_W, Type_W, Dmg_W, AtkSpeed_W, Range_W):
+        self.Dmg_W = Dmg_W
+        self.Range_W = Range_W
+        self.AtkSpeed_W = AtkSpeed_W
+        self.Type_W = Type_W
+        self.Name_W = Name_W
+        self.Rarity_W = Rarity_W
+
+# Här skapas en strängrepresentation av vapnet
+    def __str__(self):
+        return f"\n {self.Name_W}.\nThis {self.Name_W} is a {self.Type_W} type weapon.\n Stats are;\n Damage: {self.Dmg_W}\n AtkSpeed: {self.AtkSpeed_W}\n Range: {self.Range_W} "
+    
+# Här skapas vapenobjekt
+# weapon = weapon("rarity", "name","type","dmg","Atkspeed","range")
+weapon_1 = weapon("Common", "Dagger", "Blade", "15", "20", "1")
+weapon_2 = weapon("Uncommon", "Rapier", "Blade", "45", "10", "20")
+weapon_3 = weapon("Rare", "Zweihander", "Blade", "60", "8", "25")
+weapon_4 = weapon("Rare", "Shorre", "Gun", "250", "7", "30")
+weapon_5 = weapon("Epic", "Ak 5", "Gun", "7", "25", "100")
+weapon_6 = weapon("Legendary", "Golden Scar", "Gun", "10", "30", "150")
+weapon_7 = weapon("Mythic", "Musket", "Gun", "2000", "1", "200")
+
+# Här skapas en lista för spelarens vapen-inventory
+inventory = [weapon_1]
+
+# Här skapars en klass för fiender
+class entity():
+    def __init__(self, Name_E, Element_E, HP_E, Weak_E, STR_E, ):
+        self.Name_E = Name_E
+        self.STR_E = STR_E
+        self.HP_E = HP_E
+        self.Element_E = Element_E
+        self.Weak_E = Weak_E
+
+# Här skapas en strängrepresentation av fienden
+    def __str__(self):
+        return f"You have encountered a {self.Element_E} type {self.Name_E} meaning its weak to {self.Weak_E} type attacks.\nIts stats are;\n Strenght: {self.STR_E}\n HP: {self.HP_E}\n"
+    
+# Här skapas fiendeobjekt
+# entity = entity("name","type","HP","weak","STR")
+entity_1 = entity("Goblin","Normal","150","Blade and Gun","5")
+entity_2 = entity("Zombie","Undead","170","Blade","10")
+entity_3 = entity("Ravager","Tank","1000","Gun","3")
+entity_4 = entity("Warlock","Berserker","70","Gun","49")
+entity_5 = entity("Greger","Dark","1337","Blade","24")
+entity_6 = entity("Bellman","Jester","inf","Joke","10")
+entity_7 = entity("Johannes Thessén","Coder","5000","Sunlight","99")
+entity_8 = entity(r" ρ * ( ∂u/∂t  +  (u · ∇)u )  =  -∇p  +  μ ∇²u  +  f","Physics","2500","Nikodesmos","35")
+
+Enteties = [entity_1, entity_2, entity_3, entity_4, entity_5, entity_6, entity_7, entity_8]
+
+# Här skapas en klass för spelaren
+class Player():
+    def __init__(self, Name_P, HP_P, MaxHP_P, Level_P):
+        self.Name_P = Name_P
+        self.HP_P = HP_P
+        self.MaxHP_P = MaxHP_P
+        self.Level_P = Level_P
+
+# Här skapas en strängrepresentation av spelaren
+    def __str__(self):
+        return f"Player Name: {self.Name_P}\n Player HP: {self.HP_P}/{self.MaxHP_P}\n Player Level: {self.Level_P}"
+
+# Här skapas huvudfunktionen för spelet
+def main():
+
+# Här skapas spelaren
+    player_name = input("What is your name brave one?\n:")
+    Player_1 = Player(f"{player_name}", 100, 100, 1)
+    print("Hi " + Player_1.Name_P + ", welcome to the dungeon!")
+    print("Your objective is to defeat the boss at the end of the dungeon.\nThe dungeon is composed of many different rooms, trap rooms, monster rooms and loot rooms.\nYou will encounter various enemies along the way and collect more powerful weapons to help you on your journey.")
+    print("\nYou start with a " + inventory[0].Name_W + " as your weapon.\n The stats are:\n Damage: " + inventory[0].Dmg_W + "\n Attack Speed: " + inventory[0].AtkSpeed_W + "\n Range: " + inventory[0].Range_W + ".\n")
+    print("You have " + str(Player_1.HP_P) + " HP and are at level " + str(Player_1.Level_P) + ". Good luck on your adventure!")
+
+# Här skapas en räknare för antal rum spelaren har gått igenom, om spelaren når rum 30 så möter den bossen, även vilkoren för att spelet ska fortsätta
+    alive = True
+    room_encounter = 0 
+    while room_encounter < 15 or room_encounter > 15 and room_encounter < 30 and alive:
+
+    # Här skapas en meny för spelaren att välja vad den vill göra
+        player_action = input("What do you wish to do? \n Enter to a new room? (m) \n View your stats? (s)\n View your inventory? (i)\n Exit the game? (q)\n:").lower()
+
+    # Här hanteras spelarens val
+        if player_action == "m":
+            encounter = r.randint(1,2)
+            if encounter == 1:
+                print("You have entered to a new room.\n")
+
+            # Här skapas en slumpgenerator som väljer en fiende att möta
+                Entity_list = ["Goblin","Zombie","Ravager","Warlock","Greger"]
+                Entity_in_room = r.choice(Entity_list)
+
+            # Här skapas en strängrepresentation av fienden som valts och vad som händer vid en encounter
+                
+                def monsterfunktion(_monster,_entity,room_encounter):
+                        print(f"room_encounter: ", {room_encounter})
+                        if Entity_in_room == _monster:
+                            print(_entity)
+                            action = input("Do you wish to attack (a), or do you wish to escape (e)? ").lower()
+                            if action == "a":
+                                for weapon in inventory:
+                                    print(weapon)
+                                    weapon_choice = input("What weapon do you wish to use?").lower()
+                            elif action == "e":
+                                escape = r.randint(1,3) 
+                                if escape == 1:
+                                    print("You escaped successfully!")
+                                else:
+                                    print("You failed to escape! You must now prepaire for battle!")
+                                    room_encounter += 1
+                                    print(f"You have now entered {room_encounter} rooms.\n")
+
+
+                monsterfunktion('Goblin', entity_1, room_encounter)
+                monsterfunktion('Zombie', entity_2, room_encounter)
+                monsterfunktion('Ravager', entity_3, room_encounter)
+                monsterfunktion('Warlock', entity_4, room_encounter)
+                monsterfunktion('Greger', entity_5, room_encounter)    
+
+
+
+
+
+
+
+        # Här hanteras loot rooms och tomma rum
+            else:
+                loot_room = r.randint(1,3)
+                if loot_room == 1:
+                    print("\nYou have found a loot room!\n")
+                    new_weapon = r.choice([weapon_2, weapon_3, weapon_4, weapon_5, weapon_6, weapon_7])
+                    print(f"Wow, you found a {new_weapon.Rarity_W} {new_weapon.Name_W}!\n")
+                    inventory.append(new_weapon)
+                    room_encounter += 1
+                    print(f"You have now entered {room_encounter} rooms.\n")    
+                else:
+                    print("\nYou have found an empty room. Better luck next time!\n")
+                    room_encounter += 1
+                    print(f"You have now entered {room_encounter} rooms.\n")
+
+    # Här hanteras de andra valen i menyn
+        elif player_action == "s":
+            print(Player_1)
+        elif player_action == "i":
+            print("You have the following weapons at your disposal:")
+            for weapon in inventory:
+                print(f"{weapon}\n")
+        elif player_action == "q":
+            print("Thank you for playing! Goodbye!")
+            alive = False
+
+    # Här hanteras bossmötet när spelaren når rum 30
+        if room_encounter >= 30:
+            print(f"An ominous presence fills the room as you step forward.\nYou feel the air grow colder, and a deep rumble echoes through the dungeon walls.\nThe boss has awakened, and it's time to face your greatest challenge yet!\n{entity_7}\n")
+            # Skapa bosskoden här
+            
+main()
+
+# #def draw_room(player_icon="P" , enemy_icon="E", Entity_in_room):
+# #    pass
