@@ -42,5 +42,5 @@ item_2 = item(f"{Strength} {Elixir}", f"Increases {Strength} by 50")
 item_3 = item(f"{Shield}", f"Increases max {HP} by 30")
 
 # Här skapas en lista för spelarens item-inventory
-item_inventory = []
+item_n = [item_1, item_2, item_3]
 

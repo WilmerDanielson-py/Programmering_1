@@ -358,7 +358,6 @@ def main():
             for items in shop:
                 print(items)
                 
-                
 
                 
         else: 
