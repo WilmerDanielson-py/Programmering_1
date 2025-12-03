@@ -25,7 +25,15 @@ def main():
     print(f"\nYou start with a {Fore.BLACK}Common{Style.RESET_ALL} Dagger as your weapon.\n   The stats are:\n   {Fore.RED}Damage{Style.RESET_ALL}: 15\n   {Fore.BLUE}Attack Speed{Style.RESET_ALL}: 20\n   {Fore.GREEN}Range{Style.RESET_ALL}: 1.\n")
     print("You have " + str(Player_1.HP_P) + f" {HP} and are at {Level} " + str(Player_1.Level_P) + ". Good luck on your adventure!\n")
     
-# Här skapas en räknare för antal rum spelaren har gått igenom, om spelaren når rum 30 så möter den bossen, även vilkoren för att spelet ska fortsätta
+# temporär dodge test ememojs ingen aning hur länge den komemr vara kvar eller om det ens funkar
+    def dodge_attac():
+        dogde_prob = r.randint(1, 100)
+        if dogde_prob <= 20: #20% chans
+            return True
+        else:
+           return False
+
+    # Här skapas en räknare för antal rum spelaren har gått igenom, om spelaren når rum 30 så möter den bossen, även vilkoren för att spelet ska fortsätta
     alive = True
     room_encounter = 0 
     while room_encounter < 30 and alive:
@@ -35,10 +43,10 @@ def main():
         stats = [Player_1.HP_P, Player_1.MaxHP_P, Player_1.STR_P ]
     # Här hanteras spelarens val
         if player_action == "m":
-            door = input("\nYou see three doors in front of you, do you wish to enter \n   The left door (left), \n   The middle door (middle), \n   The right door (right)?\n: ").lower()
+            door = input("\nYou see three doors in front of you, do you wish to enter \n   The left door (l), \n   The middle door (m), \n   The right door (r)?\n: ").lower()
 
             print(f"\nYou chose the {door} door...\n")
-            if door == "left" or door == "middle" or door == "right":
+            if door == "l" or door == "m" or door == "r":
                 encounter = r.randint(1,2)
                 if encounter == 1:
 
@@ -47,7 +55,7 @@ def main():
                         
                         action = input("Do you wish to attack (a), or do you wish to escape (e)?\n: ").lower()
                         if action == "a":
-                           
+                            
                             if weapon_inventory:
                                 print("Your weapons:")
                                 for _weapon in weapon_inventory:
@@ -69,8 +77,13 @@ def main():
                                 print(f"You have chosen to attack with the {chosen_weapon.Name_W}.\n")
                                 if chosen_weapon.Hits_W == 0:
                                     print(f"You missed!\n")
-                                    Player_1.HP_P = Player_1.HP_P - entity_n.STR_E
-                                    print(f"You received {entity_n.STR_E} {Fore.RED}damage{Style.RESET_ALL} from the {entity_n.Name_E}!\nYour current {HP} is now {Player_1.HP_P}/{Player_1.MaxHP_P}.\n")
+                                    if dodge_attac() == True:
+                                        print(Fore.GREEN("You dodged the attack!\n"))
+                                        print(f"You took no damage from the {entity_n.Name_E}!\n")
+                                
+                                    else:
+                                        Player_1.HP_P = Player_1.HP_P - entity_n.STR_E
+                                        print(f"You received {entity_n.STR_E} {Fore.RED}damage{Style.RESET_ALL} from the {entity_n.Name_E}!\nYour current {HP} is now {Player_1.HP_P}/{Player_1.MaxHP_P}.\n")
                                 hits_this_turn = r.randint(1, chosen_weapon.Hits_W)
                                 dmg_chosen_weapon = chosen_weapon.Dmg_W * hits_this_turn
                                 total_dmg = Player_1.STR_P + dmg_chosen_weapon
@@ -234,18 +247,18 @@ def main():
                                         print(f"{item}")
                                 else:
                                     print("Your item inventory is empty.")
-                                full_inv = input("You must use (u) or drop (d) an item before picking up a new one.\n: ").lower()
+                                full_inv = input("You must use (u) an item before picking up a new one.\n: ").lower()
                                 if full_inv == "u":
                                     for item in item_inventory:
                                         print(item)
-                                        use_item = input("Which item do you wish to use?\n: ")
-                                    # skriv koden för att använda ett item 
-                                
-                                elif full_inv == "d":
-                                    for item in item_inventory:
-                                        print(item)
-                                        drop_item = input("Which item do you wish to drop?\n: ")
-                                         # skriv koden för att droppa ett item 
+                                    use_item = input("Which item do you wish to use? (HP, STR, SH) \n: ").lower()
+                                    if use_item == "hp":
+                                        Player_1.HP_P = Player_1.HP_P + 30
+                                    elif use_item == "str":
+                                        Player_1.STR_P = Player_1.STR_P + 50
+                                    elif use_item == "sh":
+                                        Player_1.MaxHP_P = Player_1.MaxHP_P + 30
+                                        
                                 
                         # Här hanteras items när item_inventory inte är fullt
                             else:
@@ -355,14 +368,11 @@ def main():
             alive = False
         elif player_action == "e":
             print(f"\nWelcome to the {Fore.BLACK}black market{Style.RESET_ALL}! Here are the available items:\n")
-            for items in shop:
-                print(items)
-                
-                
+            
 
-                
+            
         else: 
             print("Invalid input, going to menu...")
-            
+        
 main()
 print("The program has ended.\n\n")

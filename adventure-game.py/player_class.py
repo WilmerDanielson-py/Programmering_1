@@ -38,5 +38,7 @@ class Player():
     def __str__(self):
         return f"\nPlayer {Fore.GREEN}Name{Style.RESET_ALL}: {self.Name_P}\nPlayer {HP}: {self.HP_P}/{self.MaxHP_P}\nPlayer {Strength}: {self.STR_P}\nPlayer {Level}: {self.Level_P}\n"
 
+
+
 Gold_gain = 0
 
