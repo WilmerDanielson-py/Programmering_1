@@ -1,13 +1,8 @@
-implementera guld - Klart
-implementera en shop, - Leo
+
 implementera buffs för levelar
-boss-kod
-miniboss-kod
-använda/ slänga item iaf fullt inv
-dodge chans (20%) - Filip
-weakness för entitys
+
 
 
 Kanske:
 durability
-bullets
+bullets i need more bullets
