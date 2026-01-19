@@ -18,7 +18,7 @@ has_book = False
 # Här skapas en funktion för bossen
 def boss(player, enemy, weapon_inventory, item_inventory, alive):
     print_slow("An ominous presence fills the room as you step forward.\nYou feel the air grow colder, and a deep rumble echoes through the dungeon walls.\nThe boss has awakened, and it's time to face your greatest challenge yet!\n\n")
-    print_slow("Johannes Théssen, your former teacher, stands before you, his eyes filled with a mix of disappointment and determination.\nHe has been corrupted by the dungeon's dark magic and now serves as its final guardian.\n\n")
+    print_slow("Johannes Thessén, your former teacher, stands before you, his eyes filled with a mix of disappointment and determination.\nHe has been corrupted by the dungeon's dark magic and now serves as its final guardian.\n\n")
     print_slow("Johannes Théssen lets out a menacing laugh, 'So, you've made it this far, student. But your journey ends here!'\n")
     print_slow("I've taught you everything I know, but now it's time to see if you've truly learned anything at all!'\n\n")
     print_slow("You grip your weapon tightly, preparing yourself for the battle ahead.\nThis is your chance to prove your worth and overcome the challenges that have brought you to this point.\n\n")
@@ -223,6 +223,6 @@ def Johannes_battle(player, has_book, weapon_inventory, item_inventory):
         print("You have conquered the art of programming and emerged victorious!\n")
         return "won"
     elif player.HP_P <= 0:
-        print("You were defeated. Learn from your mistakes and try again.")
+        print("You were defeated. You should have studied...")
         return "dead"
     

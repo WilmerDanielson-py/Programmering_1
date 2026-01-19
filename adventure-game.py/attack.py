@@ -165,5 +165,3 @@ def fight(player, enemy, weapon_inventory, room_encounter):
         elif action == "i":
             clear_terminal()
             item_inventory_display(player, item_inventory)
-            
-                

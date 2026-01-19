@@ -19,7 +19,7 @@ class weapon():
 
 # Här skapas vapenobjekt
 # weapon = weapon("rarity", "name","type","dmg","Atkspeed","range","max hits")
-weapon_1 = weapon(BLACK("Common"), "Dagger", Blade, 15 , 20, 1, 1)
+weapon_1 = weapon(BLACK("Common"), "Dagger", Blade, 20 , 20, 1, 1)
 weapon_2 = weapon(GREEN("Uncommon"), "Rapier", Blade, 45, 10, 20, 1)
 weapon_3 = weapon(BLUE("Rare"), "Zweihander", Blade, 25, 8, 25, 3)
 weapon_4 = weapon(BLUE("Rare"), "Shorre", Gun, 20, 7, 30, 5)

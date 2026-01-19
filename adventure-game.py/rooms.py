@@ -9,6 +9,7 @@ from entity_class import *
 from bellman import miniboss_Bellman
 from physics_enemy import miniboss_Physics
 
+# Här skapas funktionen för spelarens val av handling
 def ta_player_action():
     
     valid_actions = ["m", "e", "s", "d", "w", "i", "q"]
@@ -20,7 +21,7 @@ def ta_player_action():
         else:
             print(RED("\nInvalid choice! Please select one of the options:"))
             clear_terminal()
-
+# Här skapas funktionen för rummens innehåll och möten
 def rooms(player, weapon_inventory, item_inventory, player_action, room_encounter, alive, miniboss_trigger, boss_trigger):
     if player_action == "m":
         if miniboss_trigger:
@@ -42,8 +43,8 @@ def rooms(player, weapon_inventory, item_inventory, player_action, room_encounte
                     break
                 else:
                     print(RED("Invalid choice!\n"))
-    # Här hanteras rummets innehåll när spelaren väljer en dörr
-            
+
+            # Här hanteras rummets innehåll när spelaren väljer en dörr
             clear_terminal()
             if door == "l" or door == "m" or door == "r":
                 encounter = r.randint(1,2)
@@ -66,7 +67,7 @@ def rooms(player, weapon_inventory, item_inventory, player_action, room_encounte
                     
 
 
-            # Här hanteras loot rooms, trap rooms och tomma rum
+                # Här hanteras loot rooms, trap rooms och tomma rum
                 else:
                     loot_room = r.randint(1,2)
                     if loot_room == 1:

@@ -4,7 +4,7 @@ from typing_speed import *
 from player_class import *
 from attack import *
 
-# 
+# Här skapas en funktion för minibossen Physics Entity
 def miniboss_Physics(player, enemy, alive, room_encounter, miniboss_chance):
     if miniboss_chance == "Physics_Entity":
         print_slow(f"As you step into the room, a sudden chill runs down your spine.\nThe atmosphere shifts, and you sense a powerful presence watching you.\nA shadowy figure emerges from the darkness. A Mini-Boss appears!\n\n")
@@ -24,6 +24,7 @@ def miniboss_Physics(player, enemy, alive, room_encounter, miniboss_chance):
             alive = False
     return alive
 
+# Här skapas frågorna för Physics Entity
 def physics_enemy_battle(player_hp):
     boss_hp = 2500
     boss_name = "ρ( ∂u/∂t + (u · ∇)u )=-∇p + μ ∇²u + f"
@@ -51,9 +52,10 @@ def physics_enemy_battle(player_hp):
         ("27 * 14", 378)
 
     ]
-
+    # Här tas frågorna fram i en slumpmässig ordning
     random.shuffle(questions)
     
+    # Här skaps striden
     print("A wild ρ( ∂u/∂t + (u · ∇)u )=-∇p + μ ∇²u + f appears!")
     print("Answer the math questions to defeat it!\n")
 

@@ -1,23 +1,7 @@
 import math
 from colors import *
 
-
-def RED(text, color=Fore.RED):
-    return f"{color}{text}{Style.RESET_ALL}"   
-def GREEN(text, color=Fore.GREEN):
-    return f"{color}{text}{Style.RESET_ALL}" 
-def BLUE(text, color=Fore.BLUE):
-    return f"{color}{text}{Style.RESET_ALL}" 
-def YELLOW(text, color=Fore.YELLOW):
-    return f"{color}{text}{Style.RESET_ALL}" 
-def MAGENTA(text, color=Fore.MAGENTA):
-    return f"{color}{text}{Style.RESET_ALL}" 
-def CYAN(text, color=Fore.CYAN):
-    return f"{color}{text}{Style.RESET_ALL}"  
-def BLACK(text, color=Fore.BLACK):
-    return f"{color}{text}{Style.RESET_ALL}"
-
-
+# Här skapas spelar-klassen
 class Player():
     def __init__(self, Name_P, HP_P, MaxHP_P, Level_P, STR_P, maxlevel_P, Gold_gain):
         self.Name_P = Name_P
@@ -27,14 +11,14 @@ class Player():
         self.STR_P = STR_P
         self.maxlevel_P = maxlevel_P
         self.Gold_gain = Gold_gain
-        
+    # Här skapas en funktion för att öka spelarens HP
     def increase_hp(self, amount):
         self.HP_P = min(self.HP_P + amount, self.MaxHP_P)
         
-
+    # Här skapas en sträng-representation av spelaren
     def __str__(self):
         return f"\nStudent {Fore.GREEN}Name{Style.RESET_ALL}: {self.Name_P}\nStudent {HP}: {self.HP_P}/{self.MaxHP_P}\nStudent {Strength}: {self.STR_P}\nStudent {Level}: {math.floor(self.Level_P)}\n"
-
+# Här skapas en funktion för att hantera level-ups
 def level_up(self, enemy):
     self.Level_P += enemy.LVL_E
     rounded = math.floor(self.Level_P)
@@ -44,11 +28,11 @@ def level_up(self, enemy):
     print(f"You gained {enemy.Gold_drop} {Gold}!")
     print(f"You have {self.Gold_gain} {Gold}\n")
 
-
+# Här skapas en funktion för att öka spelarens stats vid en level-up
 def increase_stat(self, enemy):
     while True:
 
-        choice_stat = input(f"You leveled up {enemy.LVL_E} time(s)! Choose a stat to increase {enemy.LVL_E} time(s):\n1. Max {HP} (+5)\n2. {Strength} (+5):\n: ").strip()
+        choice_stat = input(f"You leveled up {enemy.LVL_E} time(s)! Choose a stat to increase {enemy.LVL_E} time(s):\n1. Max {HP} (+5)\n2. {Strength} (+2)\n: ").strip()
 
         if choice_stat == "1":
             self.MaxHP_P += 5 * enemy.LVL_E
@@ -63,9 +47,9 @@ def increase_stat(self, enemy):
                 print(f"You gained 15 {HP}, your current {HP} is now {self.HP_P}/{self.MaxHP_P}.\n")
             break
         elif choice_stat == "2":
-            self.STR_P += 5 * enemy.LVL_E
+            self.STR_P += 2 * enemy.LVL_E
             self.increase_hp(15)
-            print(f"Your {Strength} has increased by 5 points and your current {Strength} is now {self.STR_P}.\n")
+            print(f"Your {Strength} has increased by {2 * enemy.LVL_E} points and your current {Strength} is now {self.STR_P}.\n")
             print(f"You also gained 15 {HP}, your current {HP} is now {self.HP_P}.\n")
             break
         else:

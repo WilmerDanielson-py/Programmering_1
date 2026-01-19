@@ -3,7 +3,7 @@ import sys
 import time
 
 
-
+# Här skapas funktioner för att skriva ut text långsamt eller snabbt
 def print_slow(str):
     for letter in str:
         sys.stdout.write(letter)
@@ -16,10 +16,9 @@ def print_fast(str):
         sys.stdout.flush()
         time.sleep(0.001)
 
- 
+# Här skapas en funktion för att rensa terminalen
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def pause(seconds):
-    time.sleep(seconds)
+
 

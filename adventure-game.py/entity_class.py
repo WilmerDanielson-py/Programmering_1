@@ -1,29 +1,6 @@
 import random as r
 from colors import *
 
-
-def RED(text, color=Fore.RED):
-    return f"{color}{text}{Style.RESET_ALL}"   
-def GREEN(text, color=Fore.GREEN):
-    return f"{color}{text}{Style.RESET_ALL}" 
-def BLUE(text, color=Fore.BLUE):
-    return f"{color}{text}{Style.RESET_ALL}" 
-def YELLOW(text, color=Fore.YELLOW):
-    return f"{color}{text}{Style.RESET_ALL}" 
-def MAGENTA(text, color=Fore.MAGENTA):
-    return f"{color}{text}{Style.RESET_ALL}" 
-def CYAN(text, color=Fore.CYAN):
-    return f"{color}{text}{Style.RESET_ALL}"  
-def BLACK(text, color=Fore.BLACK):
-    return f"{color}{text}{Style.RESET_ALL}"
-
-
-
-Blade = CYAN("Blade")
-Gun = YELLOW("Gun")
-HP = RED("HP")
-Strength = RED("Strength")
-
 class entity():
     def __init__(self, Name_E, Element_E, HP_E, Weak_E, STR_E, AtkSpeed_E, MaxHP_E, LVL_E, Gold_drop):
         self.Name_E = Name_E
